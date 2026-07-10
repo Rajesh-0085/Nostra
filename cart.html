@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nostra</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <nav class="navbar">
+        <h1 class="logo">Nostra</h1>
+        <div class="navbar-menu">
+            <ul class="navbar-list">
+                <li class="navbar-item"><a href="index.html">Home</a></li>
+                <li class="navbar-item"><a href="collection.html">collection</a></li>
+                <li class="navbar-item"><a href="cart.html">Card</a></li>
+            </ul>
+        </div>
+        <div class="navbar-menu-icons" onclick="showSideNavbar()">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+    </nav>
+    <!-- Side Navbar -->
+    <div class="side-navbar">
+        <p class="side-navbar-close" style="text-align: right;" onclick="hideSideNavbar()">
+            <i class="fa-solid fa-xmark"></i>
+        </p>
+        <div class="side-navbar-list">
+            <ul class="side-navbar-list-items">
+                <li class="side-navbar-item"><a href="index.html">Home</a></li>
+                <li class="side-navbar-item"><a href="collection.html">collection</a></li>
+                <li class="side-navbar-item"><a href="cart.html">Card</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- -->
+    <h1 style="text-align:center;margin-top:20px;">Shopping Cart</h1>
+
+    <div class="container">
+        <div id="cart"></div>
+    </div>
+
+<script>
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+function displayCart() {
+
+    let output = "";
+    let total = 0;
+
+    for (let i = 0; i < cart.length; i++) {
+
+        total += parseFloat(cart[i].price.replace("$",""));
+
+        output += `
+        <div class="cart-item">
+            <h3>${cart[i].name}</h3>
+            <p>${cart[i].price}</p>
+            <button onclick="removeItem(${i})">Remove</button>
+        </div>
+        <hr>
+        `;
+    }
+
+    if(cart.length == 0){
+        output = "<h2>Your Cart is Empty</h2>";
+    }else{
+        output += `
+        <h2>Total Amount : $${total.toFixed(2)}</h2>
+        <button onclick="buyNow()">Buy Now</button>
+        `;
+    }
+
+    document.getElementById("cart").innerHTML = output;
+}
+
+function removeItem(index){
+
+    cart.splice(index,1);
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    displayCart();
+}
+
+function buyNow(){
+
+    alert("Order Placed Successfully!");
+
+    localStorage.removeItem("cart");
+
+    cart = [];
+
+    displayCart();
+}
+
+displayCart();
+
+</script>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>Follow us on social media:</p>
+            <div class="footer-social-icons">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <p>&copy; 2024 Nostra. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,324 @@
+* {
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Oswald", sans-serif;
+}
+
+/*navbar*/
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075), 0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075), 0 8px 8px hsl(0deg 0% 0% / 0.075), 0 16px 16px hsl(0deg 0% 0% / 0.075);
+}
+
+.navbar-list {
+    display: flex;
+    column-gap: 20px;
+    list-style-type: none;
+}
+
+.navbar-item a {
+    text-decoration: none;
+    padding: 5px;
+    color: black;
+}
+
+.navbar-item a:hover {
+    color: burlywood;
+}
+
+.navbar-menu-icons {
+    display: none;
+}
+
+.navbar-menu-icons i:hover {
+    color: burlywood;
+}
+
+/*side navbar*/
+.side-navbar {
+    background-color: #333;
+    color: white;
+    width: 40%;
+    top: 0;
+    left: 0;
+    height: 100%;
+    position: fixed;
+    padding: 20px;
+    display: none;
+}
+
+.side-navbar-list-items {
+    margin-bottom: 30px;
+    list-style-type: none;
+}
+
+.side-navbar-item a {
+    text-decoration: none;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.side-navbar-item a:hover {
+    color: burlywood;
+}
+
+
+.side-navbar-close i:hover {
+    color: red;
+}
+
+/*fashion section*/
+.fashion {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.fashion-images {
+    border-radius: 10%;
+}
+
+.fashion-button {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
+    border-radius: 10px;
+    background-color: burlywood;
+    border: none;
+    color: white;
+}
+
+.fashion-button:hover {
+    background-color: black;
+    color: white;
+}
+
+/*service section*/
+.service-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+}
+
+.service-1 {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    box-sizing: content-box;
+
+}
+
+.service-1 div {
+    background-color: burlywood;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/*new-arrivel section*/
+/*most wanted section*/
+
+.new-arrivel {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.new-arrivel-content {
+    position: relative;
+    flex-basis: 20%;
+}
+
+.new-arrivel-content button {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: burlywood;
+    border: none;
+    color: white;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    border: none;
+}
+
+.new-arrivel-content button:hover {
+    background-color: black;
+    color: white;
+}
+
+/*news section*/
+.news {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.news-content {
+    text-align: center;
+}
+
+.news-form {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.news-form input[type="email"] {
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 1px;
+    outline: none;
+}
+
+.news-form button {
+    padding: 10px;
+    border: none;
+    background-color: burlywood;
+    color: white;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.news-form button:hover {
+    background-color: black;
+    color: white;
+}
+
+/*footer section*/
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+}
+
+.footer a:hover {
+    color: burlywood;
+}
+
+/*collection section*/
+.search {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.search-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+.search-button {
+    padding: 10px;
+    border: none;
+    background-color: burlywood;
+    color: white;
+    border-radius:5px;
+    cursor: pointer;
+}
+.search-button:hover {
+    background-color: black;
+    color: white;
+}
+.collection-container {
+    display: flex;
+    justify-content:space-between;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+.collection-items{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+/*cart*/
+
+.container{
+    width:70%;
+    margin:30px auto;
+}
+
+.cart-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border:1px solid #ddd;
+    padding:15px;
+    margin:10px 0;
+    border-radius:8px;
+}
+
+.cart-item button{
+    background:red;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.cart-item button:hover{
+    background:darkred;
+}
+
+.container h2{
+    margin-top:20px;
+}
+
+.container button{
+    background:green;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.container button:hover{
+    background:darkgreen;
+}
+/*media queries*/
+@media screen and (max-width: 700px) {
+    .navbar-list {
+        display: none;
+    }
+
+    .navbar-menu-icons {
+        display: block;
+    }
+}
+@media screen and (max-width: 700px) {
+    .fashion-images {
+        display: none;
+    }
+
+    .service-1 {
+        display: block;
+        margin-bottom: 5px;
+    }
+}
